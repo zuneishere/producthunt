@@ -6,7 +6,7 @@ from django.contrib import auth
 # reate your views here.
 def login(request):
     if request.method == 'POST':
-        user=auth.authenticate(username=request.POST['username'],password=request.POST['password'])
+        user=auth.authenticate(username=request.POST.get('username'),password=request.POST.get('password'))
         #print(request.POST['username'])
         #print(request.POST['password'])
         if user is not None:
